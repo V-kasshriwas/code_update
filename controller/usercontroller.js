@@ -35,6 +35,10 @@ export const signIn = async (req,res,next)=>{
     console.log(user)
     return res.status(200).json({message:"signIn succesfully" ,user})
 
+
+
+    return res.status(201).json({message:"user not found"})
+
   // if(result)
   //   var payload = {subject:req.body.email}
   // var token = await jwt.sign(payload,"asdfghvikas",{expiresIn:'1d'});
