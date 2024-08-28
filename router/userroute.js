@@ -1,7 +1,8 @@
 import express from "express";
 import { searchUser, signIn, signUp } from "../controller/usercontroller.js";
-import { Verifytoken } from "../Middleware/auth.js";
-import { AccessProfile, profileImage } from "../controller/profileController.js";
+import { PostPhotos } from "../controller/postcontroller.js";
+// import { Verifytoken } from "../Middleware/auth.js";
+import { AccessProfile, profileImage,profileImageUpdation } from "../controller/profileController.js";
 const app = express();
 const route = express.Router();
 
@@ -10,8 +11,10 @@ const route = express.Router();
 route.post("/signUp",signUp);
 route.post("/signIn",signIn);
 route.post("/FindUser",searchUser)
-route.post("/updateProfile",profileImage)
+route.post("/InsertProfile",profileImage)
 route.post("/accessProfile",AccessProfile)
+route.post("/postPhotos",PostPhotos)
+route.patch("/updateProfile",profileImageUpdation)
 
 export default route;
 
